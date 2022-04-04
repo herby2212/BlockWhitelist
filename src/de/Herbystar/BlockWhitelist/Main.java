@@ -1,12 +1,5 @@
 package de.Herbystar.BlockWhitelist;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -26,12 +19,14 @@ public class Main extends JavaPlugin implements Listener {
 	
 	public String prefix = "§7[§cBWL§7] ";
 	public boolean UpdateAviable;
+	private boolean debug = false;
 	
 	public void onEnable() {
 		
 		loadConfig();
 		
 		getServer().getPluginManager().registerEvents(this, this);
+		this.debug = getConfig().getBoolean("BlockWhitelist.Debug");
 		
 		Server server = Bukkit.getServer();
 	    ConsoleCommandSender console = server.getConsoleSender();
@@ -94,14 +89,15 @@ public class Main extends JavaPlugin implements Listener {
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onBlockbreak(BlockBreakEvent e) {
-		
 		Material m = e.getBlock().getType();
 		if(this.getConfig().getBoolean("BlockWhitelist.Enabled") == true) {
 			for(String IID : this.getConfig().getStringList("BlockWhitelist.BlockWhitelist"))
 				try {
+					if(debug) Bukkit.getConsoleSender().sendMessage("Mat ID: " + m.getId() + " - IID: " + IID);
 					if(m.getId() == Integer.parseInt(IID))
 						e.setCancelled(true);
 				} catch (NumberFormatException exe) {
+					if(debug) Bukkit.getConsoleSender().sendMessage("Mat: " + m.name() + " - IID: " + IID);
 					Material IM = Material.getMaterial(IID);
 					if((IM != null) && (IM == m))
 						e.setCancelled(true);
