@@ -1,6 +1,6 @@
 name: BlockWhitelist
 main: de.Herbystar.BlockWhitelist.Main
-version: 1.6-SNAPSHOT
+version: 1.6
 author: Herbystar
 description: Plugin to prevent custom Block Breaking
 commands:
