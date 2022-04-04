@@ -1,9 +1,12 @@
 name: BlockWhitelist
 main: de.Herbystar.BlockWhitelist.Main
-version: 1.5
+version: 1.6
 author: Herbystar
 description: Plugin to prevent custom Block Breaking
 commands:
   BWL:
     usage: /BWL
     description: BlockWhitelist Plugin!
+permissions:
+  BWL.Bypass:
+    description: Bypass the check when breaking a block.
