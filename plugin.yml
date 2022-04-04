@@ -7,3 +7,6 @@ commands:
   BWL:
     usage: /BWL
     description: BlockWhitelist Plugin!
+permissions:
+  BWL.Bypass:
+    description: Bypass the check when breaking a block.

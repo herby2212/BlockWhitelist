@@ -91,6 +91,9 @@ public class Main extends JavaPlugin implements Listener {
 	public void onBlockbreak(BlockBreakEvent e) {
 		Material m = e.getBlock().getType();
 		if(this.getConfig().getBoolean("BlockWhitelist.Enabled") == true) {
+			if(e.getPlayer().hasPermission("BWL.Bypass")) {
+				return;
+			}
 			for(String IID : this.getConfig().getStringList("BlockWhitelist.BlockWhitelist"))
 				try {
 					if(debug) Bukkit.getConsoleSender().sendMessage("Mat ID: " + m.getId() + " - IID: " + IID);
