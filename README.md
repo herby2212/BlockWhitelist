@@ -1,5 +1,5 @@
 # BlockWhitelist
-##### Supported MC versions: 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17
+##### Supported MC versions: 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18
 ## General
 BlockWhitelist allows you to define blocks that can't be broken by players.
 
