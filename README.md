@@ -1,9 +1,10 @@
 # BlockWhitelist
-##### Supported MC versions: 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18
+##### Supported MC versions: 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19
 ## General
 BlockWhitelist allows you to define blocks that can't be broken by players.
 
 To define a block just add the block **id** or **name** to the list in the config.
+The usage of block ids is recommended for MC versions 1.13 and below. For higher versions use the material/block name.
 
 ### Additional Informations
 More informations (Commands, Permissions) will soon follow in the wiki.
